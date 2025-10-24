@@ -1,0 +1,20 @@
+nav {
+	margin-block-start: 1em;
+
+	ul {
+		padding: 0;
+		display: flex;
+		list-style: none;
+		gap: 2ch;
+	}
+
+	li + li {
+		position: relative;
+		&::before {
+			content: "|";
+			position: absolute;
+			top: 0;
+			left: -1ch;
+		}
+	}
+}

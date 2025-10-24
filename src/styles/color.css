@@ -1,0 +1,10 @@
+:root {
+	--primary-clr: #131313;
+	--secondary-clr: #b40000;
+	--tertiary-clr: #ffffff;
+}
+
+body {
+	color: var(--primary-clr);
+	font-size: 1.125rem;
+}

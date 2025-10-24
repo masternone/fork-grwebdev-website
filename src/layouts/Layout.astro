@@ -1,0 +1,33 @@
+---
+import "../styles/index.css";
+import ForkMeGitHub from "../components/ForkMeGitHub.astro";
+
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title} | GR Web Dev</title>
+</head>
+<body>
+<header>
+  <nav class="grid">
+    <ul class="grid outdent">
+      <li><a href="/">Home</a></li>
+      <li><a href="/board">Board</a></li>
+      <li><a href="/presentations">Presentations</a></li>
+      <li><a href="/sponsors">Sponsors</a></li>
+    </ul>
+  </nav>
+  <!-- End -->
+  <ForkMeGitHub />
+</header>
+<main>
+  <slot />
+</main>
+</body>
+</html>

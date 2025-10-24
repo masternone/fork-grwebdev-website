@@ -1,0 +1,34 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+const { slug } = Astro.params;
+const member = await getEntry("board", slug);
+const { Content } = await render(member);
+export async function getStaticPaths() {
+	const board = await getCollection("board");
+	return board.map((member) => ({ params: { slug: member.data.slug } }));
+}
+---
+<style>
+  :root {
+    --direction: 1;
+    @view-transition {
+      navigation: auto;
+      types: slider;
+    }
+  }
+</style>
+<Layout title={`${member?.data?.title ? member?.data?.title + ': ' : ''}${member?.data?.name ?? 'Board Member Bio'}`}>
+  <section class="grid">
+    <div class="grid outdent">
+      <h1 style={{viewTransitionName: `${member?.data?.slug}-title`}}>{member?.data?.title ? member?.data?.title + ': ' : ''}{member?.data?.name ?? 'Member is not loaded'}</h1>
+    </div>
+  </section>
+  <section class="grid">
+    <div class="grid main" style={{viewTransitionName: `${member?.data?.slug}-content`}}>
+      <img src="https://placehold.co/300x375" alt="head shot" />
+      <Content />
+    </div>
+  </section>
+</Layout>
