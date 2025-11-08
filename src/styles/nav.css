@@ -1,20 +1,35 @@
-nav {
-	margin-block-start: 1em;
+header {
+  nav {
+    margin-block-start: 1em;
 
-	ul {
-		padding: 0;
-		display: flex;
-		list-style: none;
-		gap: 2ch;
-	}
+    ul {
+      padding: 0;
+      display: flex;
+      list-style: none;
+      gap: 2ch;
+    }
 
-	li + li {
-		position: relative;
-		&::before {
-			content: "|";
-			position: absolute;
-			top: 0;
-			left: -1ch;
-		}
-	}
+    li + li {
+      position: relative;
+
+      &::before {
+        content: "|";
+        position: absolute;
+        top: 0;
+        left: -1ch;
+      }
+    }
+  }
+}
+
+footer {
+  padding-block-end: 3em;
+
+  ul {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 50px);
+    list-style: none;
+    gap: 2ch;
+  }
 }
