@@ -21,10 +21,10 @@ main {
     padding: 1rem 0;
 }
 footer {
-    align-items: center;
+    align-items: end;
     display:flex;
-    flex-direction: column;
     gap: .5rem;
+    justify-content: space-between;
     margin-top: auto;
     padding: 1rem 0;
 
