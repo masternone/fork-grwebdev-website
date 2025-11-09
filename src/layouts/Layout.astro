@@ -1,94 +1,23 @@
 ---
 import "../styles/index.css";
-import ForkMeGitHub from "../components/ForkMeGitHub.astro";
-import LinkedIn from "../assets/social/linkedin-logo.svg";
-import Facebook from "../assets/social/facebook-logo.svg";
-import Instagram from "../assets/social/instagram-logo.svg";
-import X from "../assets/social/x-logo.svg";
-import Meetup from "../assets/social/meetup.svg"
-
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 const { title } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="generator" content={Astro.generator} />
-  <title>{title} | GR Web Dev</title>
-</head>
-<body>
-<header>
-  <nav class="grid">
-    <ul class="grid outdent">
-      <li><a href="/">Home</a></li>
-      <li><a href="/board">Board</a></li>
-      <li><a href="/presentations">Presentations</a></li>
-      <li><a href="/sponsors">Sponsors</a></li>
-    </ul>
-  </nav>
-  <!-- End -->
-  <ForkMeGitHub />
-</header>
-<main>
-  <slot />
-</main>
-<footer>
-  <section class="grid">
-    <div class="grid outdent">
-      <h3>Follow us on:</h3>
-    </div>
-  </section>
-  <section class="grid">
-    <ul class="grid outdent">
-      <li>
-        <a href="https://www.meetup.com/grwebdev/"
-           title="GrWebDev on Meetup"
-           target="_blank"
-           rel="noopener noreferrer">
-          <Meetup />
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/company/grwebdev/"
-           title="GrWebDev on LinkedIn"
-           target="_blank"
-           rel="noopener noreferrer">
-          <LinkedIn />
-        </a>
-      </li>
-      <li>
-        <a href="https://www.facebook.com/GRWebDev"
-           title="GrWebDev on Facebook"
-           target="_blank"
-           rel="noopener noreferrer">
-          <Facebook />
-        </a>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/grwebdevorg/"
-           title="GrWebDev on Instagram"
-           target="_blank"
-           rel="noopener noreferrer">
-          <Instagram />
-        </a>
-      </li>
-      <li>
-        <a href="https://x.com/grwebdev"
-           title="GrWebDev on X"
-           target="_blank"
-           rel="noopener noreferrer">
-          <X />
-        </a>
-      </li>
-    </ul>
-  </section>
-  <section class="grid">
-    <div class="grid outdent">
-      <p>&copy; GrWebDev</p>
-    </div>
-  </section>
-</footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | GR Web Dev</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>

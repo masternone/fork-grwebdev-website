@@ -37,35 +37,18 @@ const boardToUse = board
       types: slider;
     }
   }
-  div.grid:has(img){
-    margin-block-start: 1em;
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 2ch;
-
-    p {
-      margin-block-start: calc(-0.4 * (1.5em - 1cap));
-    }
-  }
 </style>
 <Layout title="Board">
-  <section class="grid">
-    <div class="grid outdent">
-      <h1>Board of Directors</h1>
-    </div>
-  </section>
+
+  <h1>Board of Directors</h1>
   <!-- TODO: See if we can get head shots -->
   {boardToUse.map((member) => (
-    <section class="grid">
-      <div class="grid outdent">
-        <a href={`/board/${member.data.slug}`}>
-          <h2 style={{viewTransitionName: `${member?.data?.slug}-title`}}>{member?.data?.title ? member?.data?.title + ': ' : ''}{member?.data?.name ?? 'Board Member Bio'}</h2>
-        </a>
-      </div>
-    </section>
-    <section class="grid">
-      <div class="grid" style={{viewTransitionName: `${member?.data?.slug}-content`}}>
-        <img src="https://placehold.co/100" alt="head shot" />
+    <section>
+      <a href={`/board/${member.data.slug}`}>
+        <h2 style={{viewTransitionName: `${member?.data?.slug}-title`}}>{member?.data?.title ? member?.data?.title + ': ' : ''}{member?.data?.name ?? 'Board Member Bio'}</h2>
+      </a>
+      <div style={{viewTransitionName: `${member?.data?.slug}-content`}}>
+        <img src="https://placehold.co/100" alt="" />
         <p>{member?.data?.shortDescription ?? 'Short Description'}</p>
       </div>
     </section>
