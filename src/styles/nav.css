@@ -30,7 +30,9 @@ header {
 }
 
 footer {
-  padding-block-end: 3em;
+  margin-block-start: 1em;
+  padding-block: 1em 3em;
+  background-color: oklch(from var(--red-950) l c h / 0.075);
 
   .grid div {
     display: grid;
@@ -42,9 +44,11 @@ footer {
     .social {
       grid-area: social;
     }
+
     . copy {
       grid-area: copy;
     }
+
     .seal {
       grid-area: seal;
     }
