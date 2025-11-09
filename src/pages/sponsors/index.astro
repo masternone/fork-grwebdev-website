@@ -29,7 +29,6 @@ const sponsorsToUse = Object.values(sponsors
     if (c.data.level === '2 Minutes for $10') {
       a.twoM410.push(c)
     }
-    console.log(a)
     return a;
   }, { title: [], sustaining: [], event: [], twoM410: [] } as sorted)).flat()
 ---
@@ -40,6 +39,10 @@ const sponsorsToUse = Object.values(sponsors
       navigation: auto;
       types: slider;
     }
+  }
+
+  img {
+    object-fit: contain;
   }
 </style>
 <Layout title="Sponsors">
@@ -59,7 +62,7 @@ const sponsorsToUse = Object.values(sponsors
         </a>
         <div>
           <a href={`/sponsors/${sponsor.data.slug}`}>
-            <h2 style={{ viewTransitionName: `${sponsor?.data?.slug}-title` }}>{sponsor?.data?.name ?? 'Sponsor slug'}</h2>
+            <h2 style={{ viewTransitionName: `${sponsor?.data?.slug}-title` }}>{sponsor?.data?.name ?? 'Sponsor Slug'}</h2>
           </a>
           <p>{sponsor?.data?.shortDescription ?? 'Short Description'}</p>
         </div>
