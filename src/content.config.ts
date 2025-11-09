@@ -16,4 +16,19 @@ const board = defineCollection({
 	}),
 });
 
-export const collections = { board };
+const sponsors = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "src/content/Sponsors" }),
+  schema: z.object({
+    level: z.string(),
+    name: z.string(),
+    image: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
+    shortDescription: z.string(),
+    url: z.string(),
+    slug: z.string(),
+    joinDate: z.date(),
+  })
+})
+export const collections = { board, sponsors };

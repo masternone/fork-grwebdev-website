@@ -1,6 +1,9 @@
 header {
+  padding-block: 1em .5em;
+  border-block-end: 1px solid var(--gray-900);
+  box-shadow: 0 -.5em .5em .5em var(--gray-700);
+
   nav {
-    margin-block-start: 1em;
 
     ul {
       padding: 0;
@@ -19,11 +22,33 @@ header {
         left: -1ch;
       }
     }
+
+    svg {
+      width: 3em;
+    }
   }
 }
 
 footer {
   padding-block-end: 3em;
+
+  div.grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+    "social seal"
+    "copy seal";
+
+    .social {
+      grid-area: social;
+    }
+    . copy {
+      grid-area: copy;
+    }
+    .seal {
+      grid-area: seal;
+    }
+  }
 
   ul {
     padding: 0;

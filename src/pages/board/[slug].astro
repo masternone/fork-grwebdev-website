@@ -5,9 +5,9 @@ import Layout from "../../layouts/Layout.astro";
 const { slug } = Astro.params;
 const member = await getEntry("board", slug);
 const { Content } = await render(member);
-export async function getStaticPaths() {
-	const board = await getCollection("board");
-	return board.map((member) => ({ params: { slug: member.data.slug } }));
+export async function getStaticPaths () {
+  const board = await getCollection("board");
+  return board.map((member) => ({ params: { slug: member.data.slug } }));
 }
 ---
 <style>
@@ -20,11 +20,15 @@ export async function getStaticPaths() {
   }
 </style>
 <Layout title={`${member?.data?.title ? member?.data?.title + ': ' : ''}${member?.data?.name ?? 'Board Member Bio'}`}>
-  <section>
-    <h1 style={{viewTransitionName: `${member?.data?.slug}-title`}}>{member?.data?.title ? member?.data?.title + ': ' : ''}{member?.data?.name ?? 'Member is not loaded'}</h1>
-    <div style={{viewTransitionName: `${member?.data?.slug}-content`}}>
-      <img src="https://placehold.co/300x375" alt="" />
-      <Content />
+  <section class="grid">
+    <div class="outdent image-text">
+      <img src="https://placehold.co/300x375"
+           alt=""
+           style={{ viewTransitionName: `${member?.data?.slug}-image` }} />
+      <div>
+        <h1 style={{ viewTransitionName: `${member?.data?.slug}-title` }}>{member?.data?.title ? member?.data?.title + ': ' : ''}{member?.data?.name ?? 'Member is not loaded'}</h1>
+        <Content />
+      </div>
     </div>
   </section>
 </Layout>
