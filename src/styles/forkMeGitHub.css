@@ -1,5 +1,15 @@
-.github-corner:hover .octo-arm {
+.github-corner .octo-arm {
 	animation: octocat-wave 560ms ease-in-out;
+	@media (width > 500px) {
+		animation: none;
+	}
+}
+
+.github-corner:hover .octo-arm {
+	animation: none;
+	@media (width > 500px) {
+		animation: octocat-wave 560ms ease-in-out;
+	}
 }
 
 @keyframes octocat-wave {
@@ -14,16 +24,5 @@
 	40%,
 	80% {
 		transform: rotate(10deg);
-	}
-}
-
-@media (max-width: 500px) {
-	.github-corner:hover .octo-arm {
-		animation: none;
-	}
-
-	/* biome-ignore lint/style/noDescendingSpecificity: triggers the animation */
-	.github-corner .octo-arm {
-		animation: octocat-wave 560ms ease-in-out;
 	}
 }

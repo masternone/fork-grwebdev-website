@@ -5,7 +5,7 @@ import Layout from "../../layouts/Layout.astro";
 const { slug } = Astro.params;
 const sponsor = await getEntry("sponsors", slug);
 if (!sponsor) {
-	return Astro.redirect('/404',404);
+	return Astro.redirect("/404", 404);
 }
 const { Content } = await render(sponsor);
 export async function getStaticPaths() {

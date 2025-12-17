@@ -55,9 +55,9 @@ section.grid {
 			}
 		}
 
-    &.center {
-      place-items: center;
-    }
+		&.center {
+			place-items: center;
+		}
 	}
 }
 
