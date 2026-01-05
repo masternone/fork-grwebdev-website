@@ -1,4 +1,5 @@
 ---
+import EventGrid from "../components/EventGrid.astro";
 import Home from "../components/Home.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -10,4 +11,5 @@ import Layout from "../layouts/Layout.astro";
 </style>
 <Layout title="Home">
 	<Home/>
+	<EventGrid gridSize={6}/>
 </Layout>

@@ -1,0 +1,71 @@
+---
+import { getCollection } from "astro:content";
+
+interface Props {
+	gridSize?: number;
+}
+
+const { gridSize = 3 } = Astro.props;
+
+const events = await getCollection("events");
+const eventsToUse: typeof events = [];
+const eventsSorted = events.toSorted((a, b) => {
+	const aDate = a.data.date;
+	const bDate = b.data.date;
+	return bDate.valueOf() - aDate.valueOf();
+});
+const d = new Date();
+const [eventsAfter, eventsBefore] = eventsSorted.reduce(
+	(a, c) => {
+		if (c.data.date.valueOf() > d.valueOf()) {
+			a[0].push(c);
+		} else {
+			a[1].push(c);
+		}
+		return a;
+	},
+	[[], []] as Array<typeof events>,
+);
+eventsAfter
+	.slice(eventsAfter.length >= gridSize ? gridSize * -1 : 0)
+	.forEach((event) => {
+		eventsToUse.push(event);
+	});
+while (
+	eventsToUse.length !== gridSize &&
+	eventsBefore &&
+	eventsBefore.length > 0
+) {
+	const shift = eventsBefore.shift();
+	if (shift) {
+		eventsToUse.push(shift);
+	}
+}
+---
+
+<style>
+div:has(> .event-grid) {
+	container: section / inline-size;
+}
+
+.event-grid {
+	margin-block-start: 1em;
+	display: grid;
+	gap: 2ch;
+	grid-template-columns: 1fr;
+	@container (width > 940px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+</style>
+<section class="grid">
+	<div class="outdent">
+		<div class="event-grid">
+			{eventsToUse.map(event => (
+        <a href={event.data.url} target="_blank">
+          <img src={event.data.image.src} alt={event.data.image.src} />
+        </a>
+      ))}
+		</div>
+	</div>
+</section>

@@ -13,8 +13,8 @@ const sponsors = await getCollection("sponsors");
 const sponsorsToUse = Object.values(
 	sponsors
 		.toSorted((a, b) => {
-			const aDate = new Date(a.data.joinDate);
-			const bDate = new Date(b.data.joinDate);
+			const aDate = a.data.joinDate;
+			const bDate = b.data.joinDate;
 			return aDate.valueOf() - bDate.valueOf();
 		})
 		.reduce(

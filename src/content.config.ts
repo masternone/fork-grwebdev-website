@@ -31,4 +31,18 @@ const sponsors = defineCollection({
     joinDate: z.date(),
   })
 })
-export const collections = { board, sponsors };
+
+const events = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "src/content/Events" }),
+  schema: z.object({
+    name: z.string(),
+    image: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
+    url: z.string(),
+    date: z.date(),
+
+  })
+})
+export const collections = { board, sponsors, events };

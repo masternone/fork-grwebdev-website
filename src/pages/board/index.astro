@@ -5,8 +5,8 @@ import Layout from "../../layouts/Layout.astro";
 const board = await getCollection("board");
 const boardToUse = board
 	.toSorted((a, b) => {
-		const aDate = new Date(a.data.joinDate);
-		const bDate = new Date(b.data.joinDate);
+		const aDate = a.data.joinDate;
+		const bDate = b.data.joinDate;
 		return aDate.valueOf() - bDate.valueOf();
 	})
 	.reduce(
