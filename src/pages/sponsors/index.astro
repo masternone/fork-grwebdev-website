@@ -12,6 +12,7 @@ interface sorted {
 const sponsors = await getCollection("sponsors");
 const sponsorsToUse = Object.values(
 	sponsors
+		.filter((c) => c.data.active)
 		.toSorted((a, b) => {
 			const aDate = a.data.joinDate;
 			const bDate = b.data.joinDate;

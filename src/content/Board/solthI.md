@@ -8,6 +8,7 @@ image: {
 shortDescription: "Drumstick fatback t-bone tri-tip shoulder leberkas shank pig kielbasa pork loin ham sirloin cupim."
 slug: 'sloth-i'
 joinDate: 2018-01-01
+active: true
 ---
 Bacon ipsum dolor amet pancetta short ribs tail sausage tenderloin
 andouille, salami pig turducken frankfurter kielbasa capicola. Ham doner

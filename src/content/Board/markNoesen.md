@@ -8,6 +8,7 @@ image: {
 shortDescription: "Drumstick fatback t-bone tri-tip shoulder leberkas shank pig kielbasa pork loin ham sirloin cupim."
 slug: 'mark-noesen'
 joinDate: 2023-01-01
+active: true
 ---
 Kielbasa beef ribs tenderloin sirloin sausage, venison bacon drumstick.
 Strip steak prosciutto pancetta beef ribs fatback pork, sausage short loin.

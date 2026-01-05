@@ -8,6 +8,7 @@ image: {
 shortDescription: "Drumstick fatback t-bone tri-tip shoulder leberkas shank pig kielbasa pork loin ham sirloin cupim."
 slug: 'matt-gehrls'
 joinDate: 2024-01-01
+active: true
 ---
 Chislic kielbasa meatball andouille burgdoggen t-bone frankfurter ham cow
 venison pig pancetta doner shank. Brisket short ribs capicola pancetta

@@ -10,6 +10,7 @@ invested in creating a strong tech workforce."
 url: 'https://www.westmichigantechtalent.com/'
 slug: 'west-mi-tech-talent'
 joinDate: 2018-01-01
+active: true
 ---
 
 ## Sustaining Sponsor

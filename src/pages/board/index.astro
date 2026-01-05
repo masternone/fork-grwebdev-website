@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 
 const board = await getCollection("board");
 const boardToUse = board
+	.filter((c) => c.data.active)
 	.toSorted((a, b) => {
 		const aDate = a.data.joinDate;
 		const bDate = b.data.joinDate;

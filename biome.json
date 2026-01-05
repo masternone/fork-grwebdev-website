@@ -1,12 +1,17 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
 	"vcs": {
 		"enabled": false,
 		"clientKind": "git",
 		"useIgnoreFile": false
 	},
 	"files": {
-		"includes": ["**/*.astro", "**/*.css", "**/*.md", "!.astro"],
+		"includes": [
+			"./src/**/*.astro",
+			"./src/**/*.css",
+			"./src/**/*.md",
+			"./src/!.astro"
+		],
 		"ignoreUnknown": false
 	},
 	"formatter": {
