@@ -35,18 +35,18 @@ const boardToUse = board
 ---
 
 <style>
-:root {
-	--direction: -1;
-	@view-transition {
-		navigation: auto;
-		/* biome-ignore lint/correctness/noUnknownProperty: types is not in the rules yet */
-		types: slider;
+	:root {
+		--direction: -1;
+		@view-transition {
+			navigation: auto;
+			/* biome-ignore lint/correctness/noUnknownProperty: types is not in the rules yet */
+			types: slider;
+		}
 	}
-}
 
-img {
-	object-fit: cover;
-}
+	img {
+		object-fit: cover;
+	}
 </style>
 <Layout title="Board">
 	<section class="grid">

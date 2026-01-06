@@ -44,19 +44,19 @@ while (
 ---
 
 <style>
-div:has(> .event-grid) {
-	container: section / inline-size;
-}
-
-.event-grid {
-	margin-block-start: 1em;
-	display: grid;
-	gap: 2ch;
-	grid-template-columns: 1fr;
-	@container (width > 940px) {
-		grid-template-columns: repeat(3, 1fr);
+	div:has(> .event-grid) {
+		container: section / inline-size;
 	}
-}
+
+	.event-grid {
+		margin-block-start: 1em;
+		display: grid;
+		gap: 2ch;
+		grid-template-columns: 1fr;
+		@container (width > 940px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
 </style>
 <section class="grid">
 	<div class="outdent">
