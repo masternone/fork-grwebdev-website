@@ -8,8 +8,26 @@ import Layout from "../layouts/Layout.astro";
 	@view-transition {
 		navigation: auto;
 	}
+	.mobile-show {
+		display: block;
+		@container (width > 1180px) {
+			display: none;
+		}
+	}
+
+	.desktop-show {
+		display: none;
+		@container (width > 1180px) {
+			display: block;
+		}
+	}
 </style>
 <Layout title="Home">
 	<Home />
-	<EventGrid gridSize={6} />
+	<div class="mobile-show">
+		<EventGrid gridSize={3} />
+	</div>
+	<div class="desktop-show">
+		<EventGrid gridSize={6} old={1} />
+	</div>
 </Layout>

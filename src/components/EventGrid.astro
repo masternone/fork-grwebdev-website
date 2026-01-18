@@ -3,9 +3,10 @@ import { getCollection } from "astro:content";
 
 interface Props {
 	gridSize?: number;
+	old?: number;
 }
 
-const { gridSize = 3 } = Astro.props;
+const { gridSize = 3, old = 0 } = Astro.props;
 
 const events = await getCollection("events");
 const eventsToUse: typeof events = [];
@@ -26,19 +27,20 @@ const [eventsAfter, eventsBefore] = eventsSorted.reduce(
 	},
 	[[], []] as Array<typeof events>,
 );
+const numberToGrabFromAfter = gridSize - old;
 eventsAfter
-	.slice(eventsAfter.length >= gridSize ? gridSize * -1 : 0)
+	.slice(eventsAfter.length >= numberToGrabFromAfter ? numberToGrabFromAfter * -1 : 0)
 	.forEach((event) => {
-		eventsToUse.push(event);
+		eventsToUse.unshift(event);
 	});
 while (
-	eventsToUse.length !== gridSize &&
+	eventsToUse.length < gridSize &&
 	eventsBefore &&
 	eventsBefore.length > 0
 ) {
 	const shift = eventsBefore.shift();
 	if (shift) {
-		eventsToUse.push(shift);
+		eventsToUse.unshift(shift);
 	}
 }
 ---
