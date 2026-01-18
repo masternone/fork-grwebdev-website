@@ -29,7 +29,11 @@ const [eventsAfter, eventsBefore] = eventsSorted.reduce(
 );
 const numberToGrabFromAfter = gridSize - old;
 eventsAfter
-	.slice(eventsAfter.length >= numberToGrabFromAfter ? numberToGrabFromAfter * -1 : 0)
+	.slice(
+		eventsAfter.length >= numberToGrabFromAfter
+			? numberToGrabFromAfter * -1
+			: 0,
+	)
 	.forEach((event) => {
 		eventsToUse.unshift(event);
 	});
